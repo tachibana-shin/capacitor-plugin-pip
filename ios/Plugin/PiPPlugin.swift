@@ -7,12 +7,13 @@ import Capacitor
  */
 @objc(PiPPlugin)
 public class PiPPlugin: CAPPlugin {
-    private let implementation = PiP()
+    @objc func enterPip(_ call: CAPPluginCall) {
+        call.reject("Picture-in-Picture mode not supported on this platform")
+    }
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
+    @objc func isPipSupported(_ call: CAPPluginCall) {
         call.resolve([
-            "value": implementation.echo(value)
+            "isSupported": false
         ])
     }
 }
