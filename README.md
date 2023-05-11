@@ -9,6 +9,13 @@ npm install capacitor-plugin-pip
 npx cap sync
 ```
 
+### Usage
+```ts
+import { PiP } from 'capacitor-plugin-pip'
+
+PiP.enterPiP()
+```
+
 ## API
 
 <docgen-index>
